@@ -1,8 +1,13 @@
-console.log("Probando...");
+/* CREACIÓN DE CRUC */
 
-localStorage.setItem("UCAMP", "DWF 16");
-localStorage.setItem(
-  "Los que me acompañaron en esta sesion",
-  "[Miguel, Juan Carlos]"
-);
-localStorage.setItem("Computadora", "{marca:HP, medida:17 pulgadas}");
+/* 1.- FUNCIÓN PARA CREAR TAREA */
+const crearTarea = (event) => {
+  event.preventDefault();
+  const tarea = document.getElementById("tarea").value;
+  const descripcion = document.getElementById("descripcion").value;
+  const tareasTODO = {
+    tarea,
+    descripcion,
+  };
+  localStorage.setItem("Tareas", JSON.stringify(tareasTODO));
+};
